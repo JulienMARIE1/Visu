@@ -9,13 +9,11 @@ double cpt = 0;
  à jour de l'affichage est détecté */
 void affichage(void){
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    // initialisation OpenGL : couleur de fond
-    /* Oups
-     ! une instruction OpenGL : on efface le buffer d'écran */
+
+    //une instruction OpenGL : on efface le buffer d'écran */
     glutSwapBuffers();
-    /* Oups
-     ! encore une : on indique ici qu'il faut afficher */
 }
+
 /* la fonction "redim" est appelée : une fois a la creation de la fenêtre ;
  ensuite à chaque fois que la fenêtre est redimmensionnée
  width et height representent la taille de la fenêtre */
@@ -23,23 +21,32 @@ void redim(int width, int height){
     glViewport(0, 0, width, height);
 }
 
+
+/* Fonction de gestion d'événement clavier, lorsque
+ * on appui sur q, on quitte le programme, 
+ * lorsque on appuy sur espace on change 
+ * la couleur de fond de la fenêtre 
+ */ 
 void clavier (unsigned char key, int x, int y){
     switch (key) {
         case 'q':
             exit(0);
             break;
-        case 32 :
+        case 32 : // espace
+						//réinitialise l'affichage
             glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             glutSwapBuffers();
             cout << cpt << endl;
+						// compteur qui varie entre 0 et 1
             if (cpt < 1){
                 cpt = cpt + 0.2;
             } else {
                 cpt = 0;
             }
+						// change la couleur
             glClearColor(cpt, cpt, cpt, 0) ;
-
+	
         default:
             break;
     }

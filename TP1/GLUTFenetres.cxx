@@ -8,20 +8,14 @@
 void affichage(void){
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // initialisation OpenGL : couleur de fond
-    /* Oups
-     ! une instruction OpenGL : on efface le buffer d'écran */
+    /* une instruction OpenGL : on efface le buffer d'écran */
     glutSwapBuffers();
-    /* Oups
-     ! encore une : on indique ici qu'il faut afficher */
-}
+    }
 void affichage2(void){
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // initialisation OpenGL : couleur de fond
-    /* Oups
-     ! une instruction OpenGL : on efface le buffer d'écran */
+    /* une instruction OpenGL : on efface le buffer d'écran */
     glutSwapBuffers();
-    /* Oups
-     ! encore une : on indique ici qu'il faut afficher */
 }
 /* la fonction "redim" est appelée : une fois a la creation de la fenêtre ;
  ensuite à chaque fois que la fenêtre est redimmensionnée
